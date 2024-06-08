@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Django app
+        {% endblock %}
+    </title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+</head>
+ <body>
+    <nav>
+        <a href="/" class='barra'>Home</a>
+        <a href="/about" class='barra'>About</a>
+        <a href="{% url 'posts:list' %}" class='barra'>News</a>
+    </nav>
+ {% block content %}
+ 
+ {% endblock %}
+</body>
+</html>
