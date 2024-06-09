@@ -17,9 +17,11 @@
 </head>
  <body>
     <nav>
-        <a href="/" class='barra'>Home</a>
-        <a href="/about" class='barra'>About</a>
-        <a href="{% url 'posts:list' %}" class='barra'>News</a>
+        <a href="/" >Home</a>
+        <a href="{% url 'posts:list' %}" >Productos</a>
+        <a href="{% url 'usuarios:registrar' %}" >Registrar</a>
+        <a href="{% url 'usuarios:ingresar' %}" >Ingresar</a>
+        <a href="/about">About</a>
     </nav>
  {% block content %}
  

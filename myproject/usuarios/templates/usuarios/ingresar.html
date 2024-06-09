@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Ingresar usuario
+{% endblock %}
+
+{% block content %}
+    <h1>Ingresar usuario</h1>
+    <form class="formulario-con-validacion" action="/usuarios/ingresar/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="formulario-submit">Aceptar</button>
+    </form>
+{% endblock %}
