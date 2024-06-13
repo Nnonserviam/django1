@@ -12,5 +12,7 @@ class Post(models.Model):
     date =models.DateTimeField(auto_now_add=True)
     banner = models.ImageField(default='luffy.png', blank=True)
 
+    
     def __str__(self):
         return self.nombre
+    
