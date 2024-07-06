@@ -1,3 +1,4 @@
+env
 .venv
 myproject/db.sqlite3
 myproject/**/__pycache__
