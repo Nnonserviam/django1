@@ -4,7 +4,7 @@ from django.utils import timezone
 class Categoria(models.Model):
     nombre = models.CharField(max_length=100)
 
-    def str(self):
+    def __str__(self):
         return self.nombre
 
 class Post(models.Model):
@@ -18,7 +18,7 @@ class Post(models.Model):
     banner = models.ImageField(default='luffy.png', blank=True)
     categorias = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='categorias')
 
-    def str(self):
+    def __str__(self):
         return self.nombre
 
 
@@ -29,8 +29,8 @@ class Cliente(models.Model):
     infoContacto = models.TextField()
     detFacturacion = models.IntegerField()
     histCompras = models.IntegerField()
-
-    def str(self):
+    
+    def __str__(self):
         return self.nombre
 
 class Pedido(models.Model):
@@ -47,6 +47,7 @@ class Pedido(models.Model):
     estado = models.CharField(max_length=20, choices=ESTADO_CHOICES, default='PENDIENTE')
     fechaPedido = models.DateTimeField(default=timezone.now)
     fechaEntrega = models.DateTimeField(null=True, blank=True)
-    def str(self):
-        return self.nombre
+    
+    def __str__(self):
+        return f"{self.idpedido}-{self.estado}"
 
