@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,7 +22,7 @@
     <!-- Contenedor Header -->
     <header id="linkHome">
         <nav id="navFixed" class="navbar fixed-top navbar-expand-lg navbar-light bg-light p-10px">
-            <a class="navbar-brand" href="#linkHome">Landerz<small>.</small></a>
+            <a class="navbar-brand" href="#linkHome">Team Sublima<small>.</small></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -35,13 +36,16 @@
                         <a class="nav-link scroll" href="#linkFeatures">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#linkAbout">About</a>
+                        <a class="nav-link scroll" href="#linkAbout">Sobre Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#linkTestimonial">Testimonial</a>
+                        <a class="nav-link scroll" href="#linkTestimonial">Testimonios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link scroll" href="#linkContacto">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll" href="#linkContacto">Ingresar</a>
                     </li>
 
                 </ul>
@@ -49,12 +53,12 @@
         </nav>
 
         <div class="boxLogo">
-            <h1>Landerz<small>.</small></h1>
+            <h1>Team Sublima<small>.</small></h1>
         </div>
 
         <div class="boxHeader">
             <div class="textosHeader">
-                <h1><b>Grow Your Business Faster</b></h1>
+                <h1><b>Personaliza tus productos</b></h1>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur cupiditate voluptate repellendus voluptas esse culpa iusto.</p>
 
                 <a class="botonGetStarted" href="#" rel="nofollow noopener">Get Started</a>
@@ -62,7 +66,7 @@
             </div>
 
             <div class="imgHeader">
-                <img src="images/landing_1.png" alt="">
+                <img src="{% static 'images/Sublima.jpg' %}" alt="">
             </div>
         </div>
     </header>
@@ -71,56 +75,40 @@
     <!-- Contenedor Main -->
     <main>
         <a id="subir" class="icon-arrow-up scroll" href="#linkHome"></a>
-        <!-- Sección Features -->
-        <section class="boxFeatures" id="linkFeatures">
-            <h3>Features</h3>
+<!-- Sección Features -->
+<section class="boxFeatures" id="linkFeatures">
+    <h3>Productos</h3>
 
-            <div class="features">
-                <div class="cardFeatures">
-                    <span class="icon-refresh"></span>
-                    <h4>Titulo</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita odit est ullam quis recusandae ab illum sunt ut in excepturi tenetur a.</p>
-                    <a href="#">Learn More</a>
-                </div>
+    <div class="features">
+        <div class="cardFeatures">
+            <img src="{% static 'images/producto1.jpg' %}" alt="Producto 1">
+            <h4>💫 Vaso de vidrio empavonado "Los odio a todos"</h4>
+            <p>
+                🥛 Capacidad: 500cc
+                🎍 Tapa de Bambú
+                🌀 Bombilla de Vidrio.</p>
+        </div>
 
-                <div class="cardFeatures">
-                    <span class="icon-refresh"></span>
-                    <h4>Titulo</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita odit est ullam quis recusandae ab illum sunt ut in excepturi tenetur a.</p>
-                    <a href="#">Learn More</a>
-                </div>
+        <div class="cardFeatures">
+            <img src="{% static 'images/producto2.jpg' %}" alt="Producto 2">
+            <h4>💫 Vaso de vidrio empavonado "En serio"</h4>
+            <p>
+                🥛 Capacidad: 500cc
+                🎍 Tapa de Bambú
+                🌀 Bombilla de Vidrio</p>
+        </div>
 
-                <div class="cardFeatures">
-                    <span class="icon-refresh"></span>
-                    <h4>Titulo</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita odit est ullam quis recusandae ab illum sunt ut in excepturi tenetur a.</p>
-                    <a href="#">Learn More</a>
-                </div>
+        <div class="cardFeatures">
+            <img src="{% static 'images/producto3.jpg' %}" alt="Producto 3">
+            <h4>💫 Vaso de vidrio empavonado "Aca Manejando el estrés"</h4>
+            <p> 🥛 Capacidad: 500cc
+                🎍 Tapa de Bambú
+                🌀 Bombilla de Vidrio</p>
+        </div>  
+    </div>
+</section>
+<!-- Fin Sección Features -->
 
-                <div class="cardFeatures">
-                    <span class="icon-refresh"></span>
-                    <h4>Titulo</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita odit est ullam quis recusandae ab illum sunt ut in excepturi tenetur a.</p>
-                    <a href="#">Learn More</a>
-                </div>
-
-                <div class="cardFeatures">
-                    <span class="icon-refresh"></span>
-                    <h4>Titulo</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita odit est ullam quis recusandae ab illum sunt ut in excepturi tenetur a.</p>
-                    <a href="#">Learn More</a>
-                </div>
-
-                <div class="cardFeatures">
-                    <span class="icon-refresh"></span>
-                    <h4>Titulo</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita odit est ullam quis recusandae ab illum sunt ut in excepturi tenetur a.</p>
-                    <a href="#">Learn More</a>
-                </div>
-            </div>
-
-        </section>
-        <!-- Fin Sección Features -->
 
         <!-- Sección Call To Actions -->
         <section class="boxCallToActions">
@@ -251,7 +239,7 @@
     <!-- Contenedor Footer -->
     <footer class="footer">
         <div class="boxTextFooter">
-            <p>Hecho con <span class="icon-heart"></span> <a href="https://github.com/oscarcornejo" target="_blank"> por Oscar Cornejo</a></p>
+            <p>Hecho POR <span class="icon-heart"></span> por Equipo CCEF</a></p>
         </div>
     </footer>
     <!-- Fin Contenedor Footer -->
@@ -266,3 +254,9 @@
 </body>
 
 </html>
+
+<!--#BADF88
+#FCC89C
+#F297BF
+#C99FEA 
+

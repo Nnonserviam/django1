@@ -150,9 +150,9 @@ a.botonGetStarted {
     margin-top: 20px;
     color: #fff;
     padding: 8px 20px;
-    background-color: #20bf6b;
+    background-color: #020202;
     border-radius: 35px;
-    border: 2px solid #20bf6b;
+    border: 2px solid #0a0a0a;
     box-shadow: 0px 5px 18px rgba(0, 0, 0, .2);
     transition: all 0.3s ease 0s;
 }
@@ -167,15 +167,16 @@ a.botonGetStarted:hover {
 }
 
 .boxHeader .imgHeader {
-    right: -19%;
+    right: -10%;
     position: relative;
 }
 
 .imgHeader img {
-    width: 80%;
+    width: 50%;
     transform: translateX(0);
     opacity: 1;
     animation: animacion1 1s ease-out;
+    margin-bottom: auto;
 }
 
 @keyframes animacion1 {
@@ -245,7 +246,7 @@ a.botonGetStarted:hover {
 
 .cardFeatures {
     background: #ffffff;
-    width: 30%;
+    width: 5%;
     border-radius: 3px;
     padding: 1.25rem;
     transition: 0.4s;
@@ -626,7 +627,7 @@ a.botonGetStarted:hover {
         align-items: center;
     }
     .imgHeader img {
-        width: 95%;
+        width: 80%;
     }
     /* ESTILOS FEATURES */
     .boxFeatures {
@@ -780,4 +781,50 @@ a.botonGetStarted:hover {
         justify-content: center;
         text-align: center;
     }
+}
+
+/* ESTILOS FEATURES */
+.boxFeatures {
+    padding: 50px;
+    background-color: #f6f6f6;
+    height: auto;
+    text-align: center; /* Para centrar el título */
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    width: 90%;
+    margin: 40px auto 0;
+}
+
+.cardFeatures {
+    background: #ffffff;
+    width: 30%;
+    border-radius: 3px;
+    padding: 1.25rem;
+    transition: 0.4s;
+    margin-bottom: 20px;
+    text-align: center; /* Para centrar el contenido dentro de las cartas */
+}
+
+.cardFeatures img {
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+}
+
+.cardFeatures h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.cardFeatures p {
+    font-size: 14px;
+    color: #9c9c9c;
 }
