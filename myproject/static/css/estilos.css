@@ -1,6 +1,6 @@
 *,
- ::after,
- ::before {
+::after,
+::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -29,10 +29,12 @@ h3 {
     text-align: center;
     margin-bottom: 20px;
     font-weight: bold;
+    color: #000000; /* Color de los títulos h3 */
 }
 
 p {
     font-size: 14px;
+    color: #9c9c9c;
 }
 
 .p-10px {
@@ -48,7 +50,7 @@ p {
 }
 
 .current {
-    border-bottom: 2px solid #20bf6b;
+    border-bottom: 2px solid #C99FEA; /* Color de borde de los enlaces activos */
 }
 
 .boxLogo {
@@ -57,7 +59,7 @@ p {
 }
 
 .boxLogo h1>small {
-    color: #20bf6b;
+    color: #F297BF; /* Color del punto en el logo */
 }
 
 #subir {
@@ -69,8 +71,8 @@ p {
 .irArriba {
     display: block!important;
     padding: 15px;
-    background: #20be6b;
-    border: 2px solid #20bf6b;
+    background: #C99FEA; /* Color de fondo del botón de subir */
+    border: 2px solid #C99FEA;
     font-size: 18px;
     color: #fff;
     cursor: pointer;
@@ -89,9 +91,9 @@ p {
 
 .irArriba:hover {
     background: transparent;
-    border: 2px solid #20bf6b;
+    border: 2px solid #C99FEA;
     transition: all 0.3s ease 0s;
-    color: #20bf6b;
+    color: #C99FEA;
     padding: 15px;
 }
 
@@ -102,15 +104,18 @@ p {
     }
 }
 
-
 /* ESTILOS HEADER */
 
 header {
-    height: 700px;
+    height: 650px;
     width: 100%;
     position: relative;
-    background-color: #fff;
+    background-color: #F297BF; /* Color de fondo del header */
     padding-top: 55px;
+    background-image: url('images/tu-imagen-fondo.jpg'); /* Imagen de fondo para efecto parallax */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 .boxHeader {
@@ -126,20 +131,52 @@ header {
 .boxHeader .textosHeader {
     width: 42%;
     position: relative;
-    left: 15%;
+    left: 5%;
     transform: translateY(0);
     opacity: 1;
-    animation: animacion2 1s ease-out;
+    animation: fadeInLeft 1s ease-out;
+    
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.boxHeader .imgHeader {
+    right: 0%;
+    position: relative;
+    opacity: 1;
+    animation: fadeInRight 1s ease-out;
+    border-radius: 50%;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .boxHeader .textosHeader h1 {
-    font-size: 50px;
+    font-size: 40px;
     width: 55%;
+    color: #ffffff; /* Color del título principal */
 }
 
 .boxHeader .textosHeader p {
     width: 65%;
-    color: #9c9c9c;
+    color: #000000;
     font-size: 14px;
 }
 
@@ -158,41 +195,19 @@ a.botonGetStarted {
 }
 
 a.botonGetStarted:hover {
-    color: #20bf6b !important;
+    color: #ffffff !important;
     background-color: transparent;
     border-radius: 6px;
     transition: all 0.3s ease 0s;
-    box-shadow: 0px 15px 18px rgba(32, 191, 107, 0.4);
+    box-shadow: 0px 15px 18px rgba(255, 255, 255, 0.4);
     transform: translateY(-6px);
-}
-
-.boxHeader .imgHeader {
-    right: -10%;
-    position: relative;
 }
 
 .imgHeader img {
     width: 50%;
     transform: translateX(0);
-    opacity: 1;
-    animation: animacion1 1s ease-out;
     margin-bottom: auto;
 }
-
-@keyframes animacion1 {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-}
-
-@keyframes animacion2 {
-    0% {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-}
-
 
 /* ESTILOS NAVBAR */
 
@@ -205,11 +220,11 @@ a.botonGetStarted:hover {
 }
 
 .navbar-brand small {
-    color: #20bf6b;
+    color: #F297BF;
 }
 
 .nav-link:hover {
-    border-bottom: 2px solid #20bf6b;
+    border-bottom: 2px solid #C99FEA;
 }
 
 .navbar-toggler {
@@ -224,70 +239,77 @@ a.botonGetStarted:hover {
     background-color: #ffffff!important;
 }
 
-
 /* ESTILOS FEATURES */
 
 .boxFeatures {
     padding: 50px;
-    background-color: #f6f6f6;
-    height: 100vh;
+    background-color: #FCC89C; /* Color de fondo de la sección */
+    height: auto;
+    text-align: center; /* Para centrar el título */
 }
 
 .features {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
     max-width: 1000px;
     width: 90%;
-    margin: auto;
-    overflow: hidden;
-    margin-top: 40px;
+    margin: 40px auto 0;
 }
 
 .cardFeatures {
-    background: #ffffff;
-    width: 5%;
+    background: #F297BF; /* Color de fondo de las cartas */
+    width: 30%;
     border-radius: 3px;
     padding: 1.25rem;
     transition: 0.4s;
     margin-bottom: 20px;
+    text-align: center; /* Para centrar el contenido dentro de las cartas */
+    box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.2); /* Sombra para las cartas */
 }
 
-.cardFeatures span {
-    box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.2);
-}
-
-.cardFeatures a {
-    color: #02d2b5;
-}
-
-.cardFeatures:hover {
-    cursor: pointer;
-    transform: scale(0.9, 0.9);
-}
-
-.cardFeatures span {
-    background: #00d2b5;
-    color: #fff;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
+.cardFeatures img {
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
     margin-bottom: 1rem;
 }
 
 .cardFeatures h4 {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
+    margin-bottom: 1rem;
+    color: #ffffff; /* Color del texto de los títulos */
 }
 
 .cardFeatures p {
-    font-size: 12px;
-    color: #9c9c9c;
+    font-size: 14px;
+    color: #333333; /* Color del texto de las descripciones */
 }
 
+/* Botón Ver Todos Nuestros Productos */
+.verProductos {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.botonVerProductos {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #C99FEA; /* Color de fondo del botón */
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botonVerProductos:hover {
+    background-color: #A67ECF; /* Color de fondo del botón al pasar el mouse */
+    transform: translateY(-2px);
+}
 
 /* ESTILOS CALL TO ACTION  */
 
@@ -399,20 +421,19 @@ a.botonGetStarted:hover {
     width: 100%;
 }
 
-
 /* ESTILOS ABOUT */
 
 .boxAbout {
     padding: 50px;
-    background-color: #f6f6f6;
-    height: 100vh;
+    background-color: #F297BF; /* Color de fondo de la sección About */
+    height: 90vh;
 }
 
 .about {
     padding: 80px 0;
     display: flex;
     justify-content: space-around;
-    width: 80%;
+    width: 90%;
     margin: auto;
     flex-wrap: wrap;
 }
@@ -435,17 +456,18 @@ a.botonGetStarted:hover {
 }
 
 .contenidoAbout h3 {
-    font-size: 30px;
+    font-size: 50px;
     text-align: left;
     margin-bottom: 20px;
+    color: #ffffff; /* Color del texto de los títulos */
 }
 
 .contenidoAbout p {
     margin-bottom: 10px;
     width: 80%;
-    color: #9c9c9c;
+    color: #ffffff;
+    
 }
-
 
 /* ESTILOS SLIDER */
 
@@ -479,7 +501,7 @@ a.botonGetStarted:hover {
 }
 
 .carousel-indicators li {
-    background-color: #20bf6b;
+    background-color: #C99FEA; /* Color de los indicadores del slider */
 }
 
 .carousel-item {
@@ -492,17 +514,16 @@ a.botonGetStarted:hover {
     border-radius: 100%;
 }
 
-
 /* ESTILOS CONTACTO */
 
 .boxContacto {
     padding: 50px;
-    background-color: #f6f6f6;
+    background-color: #FCC89C; /* Color de fondo de la sección Contacto */
     height: 100%;
 }
 
 .contacto {
-    background: white;
+    background: #F297BF; /* Color de fondo del formulario de contacto */
     padding: 50px 40px;
     width: 42%;
     margin-top: 30px;
@@ -516,19 +537,19 @@ a.botonGetStarted:hover {
     margin-top: 20px;
     color: #fff;
     padding: 8px 20px;
-    background-color: #20bf6b;
+    background-color: #C99FEA; /* Color de fondo del botón de enviar */
     border-radius: 35px;
-    border: 2px solid #20bf6b;
+    border: 2px solid #C99FEA;
     box-shadow: 0px 5px 18px rgba(0, 0, 0, .2);
     transition: all 0.3s ease 0s;
 }
 
 .botonEnviarMensaje:hover {
-    color: #20bf6b !important;
+    color: #ffffff !important;
     background-color: transparent;
     border-radius: 6px;
     transition: all 0.3s ease 0s;
-    box-shadow: 0px 15px 18px rgba(32, 191, 107, 0.4);
+    box-shadow: 0px 15px 18px rgba(201, 159, 234, 0.4);
     transform: translateY(-6px);
 }
 
@@ -536,11 +557,10 @@ a.botonGetStarted:hover {
     font-size: 14px;
 }
 
-
-/*  ESTILOS FOOTER*/
+/*  ESTILOS FOOTER */
 
 .footer {
-    background: white;
+    background: #F297BF; /* Color de fondo del footer */
     padding: 25px;
 }
 
@@ -560,14 +580,13 @@ a.botonGetStarted:hover {
 }
 
 .boxTextFooter p a:hover {
-    color: #20be6b;
+    color: #C99FEA; /* Color de los enlaces al pasar el mouse */
     transition: 0.4s;
 }
 
 .boxTextFooter span {
-    color: #20be6b;
+    color: #C99FEA; /* Color del corazón en el footer */
 }
-
 
 /* MEDIA QUERIES */
 
@@ -783,15 +802,17 @@ a.botonGetStarted:hover {
     }
 }
 
-/* ESTILOS FEATURES */
-.boxFeatures {
+/* PAGINA PRODUCTOS
+
+/* Estilos para la sección de productos */
+.boxProductos {
     padding: 50px;
-    background-color: #f6f6f6;
+    background-color: #FCC89C;
     height: auto;
-    text-align: center; /* Para centrar el título */
+    text-align: center;
 }
 
-.features {
+.productos {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -801,30 +822,115 @@ a.botonGetStarted:hover {
     margin: 40px auto 0;
 }
 
-.cardFeatures {
-    background: #ffffff;
+.cardProducto {
+    background: #F297BF;
     width: 30%;
     border-radius: 3px;
     padding: 1.25rem;
     transition: 0.4s;
     margin-bottom: 20px;
-    text-align: center; /* Para centrar el contenido dentro de las cartas */
+    text-align: center;
+    box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.2);
 }
 
-.cardFeatures img {
+.cardProducto img {
     width: 100%;
     height: auto;
     border-radius: 3px;
     margin-bottom: 1rem;
 }
 
-.cardFeatures h4 {
+.cardProducto h4 {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 1rem;
+    color: #ffffff;
 }
 
-.cardFeatures p {
+.cardProducto p {
     font-size: 14px;
-    color: #9c9c9c;
+    color: #333333;
 }
+
+.botonCarrito {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #C99FEA;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botonCarrito:hover {
+    background-color: #A67ECF;
+    transform: translateY(-2px);
+}
+
+/* Estilos para el carrito */
+.carrito {
+    padding: 50px;
+    background-color: #FCC89C;
+    height: auto;
+    text-align: center;
+}
+
+#carritoItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.carritoTotal {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#comprar {
+    margin-top: 20px;
+}
+
+.instagram-button,
+.whatsapp-button {
+    position: fixed;
+    z-index: 1000;
+}
+
+.instagram-button {
+    bottom: 80px; /* Ajusta esta posición según tus necesidades */
+    left: 20px;
+}
+
+.instagram-button img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.instagram-button:hover img {
+    transform: scale(1.1);
+}
+
+.whatsapp-button {
+    bottom: 20px;
+    left: 20px;
+}
+
+.whatsapp-button img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.whatsapp-button:hover img {
+    transform: scale(1.1);
+}
+
+

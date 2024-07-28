@@ -18,6 +18,7 @@ class Post(models.Model):
     banner = models.ImageField(default='luffy.png', blank=True)
     categorias = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='categorias')
 
+    
     def __str__(self):
         return self.nombre
 
@@ -32,6 +33,7 @@ class Cliente(models.Model):
     
     def __str__(self):
         return self.nombre
+    
 
 class Pedido(models.Model):
     ESTADO_CHOICES = [
@@ -42,7 +44,7 @@ class Pedido(models.Model):
     ]
 
     idpedido = models.AutoField(primary_key=True)
-    productos = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='productos')
+    productos = models.ManyToManyField(Post, through='PedidoProducto', through_fields=('pedido', 'producto'), related_name='pedidos')
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='clientes')
     estado = models.CharField(max_length=20, choices=ESTADO_CHOICES, default='PENDIENTE')
     fechaPedido = models.DateTimeField(default=timezone.now)
@@ -51,3 +53,7 @@ class Pedido(models.Model):
     def __str__(self):
         return f"{self.idpedido}-{self.estado}"
 
+class PedidoProducto(models.Model):
+    pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
+    producto = models.ForeignKey(Post, on_delete=models.CASCADE)
+    cantidad = models.IntegerField(default=1)

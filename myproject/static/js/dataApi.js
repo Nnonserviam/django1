@@ -34,12 +34,12 @@ async function getUsers() {
                     if (user[i].id === 1) {
                         string += `
                             <div class="carousel-item active">
-                                <img class="d-block mx-auto" src="images/person_${i + 1}.jpg" alt=""> 
+                                <img class="d-block mx-auto" src="{% static 'images/person_${i + 1}.jpg' %}" alt=""> 
                         `;
                     } else {
                         string += `
                             <div class="carousel-item">
-                                <img class="d-block mx-auto" src="images/person_${i + 1}.jpg" alt=""> 
+                                <img class="d-block mx-auto" src="{% static 'images/person_${i + 1}.jpg' %}" alt=""> 
                         `;
                     }
 

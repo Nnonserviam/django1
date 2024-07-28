@@ -1,21 +1,33 @@
-
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Oscar Cornejo">
     <meta name="description" content="Landing Page">
-    <title>Landing Page</title>
+    <title>Team Sublima</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'icons/icomoon.css' %}">
     <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 </head>
+<style>
+        
+        
+    .imgHeader img {
+        border-radius: 50%; 
+        width: 500px; 
+        height: 500px; 
+        object-fit: cover; 
+    }
+</style>
 
 <body>
 
@@ -29,44 +41,43 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
+                    
                     <li class="nav-item">
-                        <a class="nav-link scroll current" href="#linkHome">Home</a>
+                        <a class="nav-link scroll current" href="{% url 'posts:homep' %}">Sublima</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#linkFeatures">Features</a>
+                        <a class="nav-link" href="{% url 'posts:list' %}">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#linkAbout">Sobre Nosotros</a>
+                        <a class="nav-link scroll" href="{% url 'posts:homep' %}">Sobre Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#linkTestimonial">Testimonios</a>
+                        <a class="nav-link scroll" href="{% url 'posts:homep' %}">Testimonios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#linkContacto">Contacto</a>
+                        <a class="nav-link scroll" href="{% url 'posts:homep' %}">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#linkContacto">Ingresar</a>
+                        <a class="nav-link" href="{% url 'usuarios:ingresar' %}">Ingresar</a>
                     </li>
 
                 </ul>
             </div>
         </nav>
 
-        <div class="boxLogo">
-            <h1>Team Sublima<small>.</small></h1>
-        </div>
+        
 
         <div class="boxHeader">
-            <div class="textosHeader">
-                <h1><b>Personaliza tus productos</b></h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur cupiditate voluptate repellendus voluptas esse culpa iusto.</p>
+            <div class="textosHeader animate__animated animate__fadeInLeft">
+                <h1><b>🎨✨ ¡Personaliza tus productos con Nosotros ✨🎨</b></h1>
+                <p> ¿Quieres darle un toque único a tus artículos favoritos? ¡Nosotros te ayudamos! 
+                    Desde camisetas hasta tazas y más, hacemos que tus ideas cobren vida. 💡🔥📲 Síguenos en @teamsublima y descubre todas las posibilidades de personalización que ofrecemos. ¡Haz que tus productos hablen por ti!</p>
 
-                <a class="botonGetStarted" href="#" rel="nofollow noopener">Get Started</a>
+                <a class="botonGetStarted" href="productos.html" rel="nofollow noopener">Empieza a Personalizar</a>
 
             </div>
-
-            <div class="imgHeader">
-                <img src="{% static 'images/Sublima.jpg' %}" alt="">
+            <div class="imgHeader animate__animated animate__fadeInRight">
+                <img src="{% static 'images/teamSublima.jpg' %}" alt="">
             </div>
         </div>
     </header>
@@ -75,98 +86,60 @@
     <!-- Contenedor Main -->
     <main>
         <a id="subir" class="icon-arrow-up scroll" href="#linkHome"></a>
-<!-- Sección Features -->
-<section class="boxFeatures" id="linkFeatures">
-    <h3>Productos</h3>
+        <!-- Sección Features -->
+        <section class="boxFeatures" id="linkFeatures">
+            <h3>Productos</h3>
 
-    <div class="features">
-        <div class="cardFeatures">
-            <img src="{% static 'images/producto1.jpg' %}" alt="Producto 1">
-            <h4>💫 Vaso de vidrio empavonado "Los odio a todos"</h4>
-            <p>
-                🥛 Capacidad: 500cc
-                🎍 Tapa de Bambú
-                🌀 Bombilla de Vidrio.</p>
-        </div>
-
-        <div class="cardFeatures">
-            <img src="{% static 'images/producto2.jpg' %}" alt="Producto 2">
-            <h4>💫 Vaso de vidrio empavonado "En serio"</h4>
-            <p>
-                🥛 Capacidad: 500cc
-                🎍 Tapa de Bambú
-                🌀 Bombilla de Vidrio</p>
-        </div>
-
-        <div class="cardFeatures">
-            <img src="{% static 'images/producto3.jpg' %}" alt="Producto 3">
-            <h4>💫 Vaso de vidrio empavonado "Aca Manejando el estrés"</h4>
-            <p> 🥛 Capacidad: 500cc
-                🎍 Tapa de Bambú
-                🌀 Bombilla de Vidrio</p>
-        </div>  
-    </div>
-</section>
-<!-- Fin Sección Features -->
-
-
-        <!-- Sección Call To Actions -->
-        <section class="boxCallToActions">
-            <div class="callToActions">
-                <div class="imgCallToActions">
-                    <img src="{% static 'images/do_ui_kit_download_cta_floating_devices-2x.png' %}" alt="">
+            <div class="features">
+                <div class="cardFeatures">
+                    <img src="{% static 'images/producto1.jpg' %}" alt="Producto 1">
+                    <h4>💫 Vaso de vidrio empavonado "Los odio a todos"</h4>
+                    <p>
+                        🥛 Capacidad: 500cc<br>
+                        🎍 Tapa de Bambú<br>
+                        🌀 Bombilla de Vidrio.
+                    </p>
                 </div>
 
-                <article class="contenido">
-                    <h3>Create interactive <br>prototypes</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam possimus nemo sequi cum? Obcaecati eos possimus ea numquam fugit. Quae et labore accusamus consectetur voluptatum placeat incidunt quaerat quibusdam accusantium.</p>
+                <div class="cardFeatures">
+                    <img src="{% static 'images/producto 4.jpg' %}" alt="Producto 2">
+                    <h4>Morral de "Mi vecino Totoro"🐱</h4>
+                    <p>
+                        🌼Diseño de Totoro.<br>
+                        📏 Medidas: 34 cm de ancho x 42 cm de alto.<br>
+                        👜 Material: Fabricada con tela ecológica de 100% algodón.
+                    </p>
+                </div>
 
-                    <ul>
-                        <li> <span class="icon-check"></span> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </li>
-                        <li> <span class="icon-check"></span> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        </li>
-                    </ul>
-
-
-                    <div class="boxCardCallToActions" id="cardAnimada">
-                        <div class="cardCallToActions">
-
-                            <div class="boxProfesional">
-                                <div class="imgProfesional">
-                                    <img src="{% static 'images/person_1.jpg' %}" alt="">
-                                </div>
-                                <div class="datosProfesional">
-                                    <h5>Amalia G.</h5>
-                                    <h6>Co-Founder, XYZ Inc.</h6>
-                                </div>
-                            </div>
-                            <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita odit est ullam quis recusandae ab illum sunt ut in excepturi tenetur a, aspernatur iste. Accusamus dolorem delectus tempore debitis quaerat."</p>
-                        </div>
-                    </div>
-
-
-                </article>
-
-
+                <div class="cardFeatures">
+                    <img src="{% static 'images/producto 5.jpg' %}" alt="Producto 3">
+                    <h4>"Me and karma vibe like that" ☯️</h4>
+                    <p>
+                        ☕️Taza de 11 onzas<br>
+                        🎶 Diseño único con la frase "Me and karma vibe like that"
+                    </p>
+                </div>
+            </div>
+            <div class="verProductos">
+                <a href="productos.html" class="botonVerProductos">Ver todos nuestros productos</a>
             </div>
         </section>
-        <!-- Fin Sección Call To Actions -->
+        <!-- Fin Sección Features -->
 
         <!-- Sección About -->
         <section class="boxAbout" id="linkAbout">
 
-            <h3>About Us</h3>
+            <h3>Acerca de Nosotros</h3>
 
             <div class="about">
                 <div class="imgAbout">
-                    <img src="{% static 'images/about_1.jpg' %}" alt="">
+                    <img src="{% static 'images/sublimacion.jpg' %}" alt="">
                 </div>
 
                 <article class="contenidoAbout">
-                    <h3>Create interactive prototypes</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam possimus nemo sequi cum? Obcaecati eos possimus ea numquam fugit. Quae et labore accusamus consectetur voluptatum placeat incidunt quaerat quibusdam accusantium.</p>
-                    <a class="botonGetStarted" href="#">Learn More</a>
+                    <h3>¿Que es la Sublimación?</h3>
+                    <p>La sublimación es un proceso de impresión que se utiliza para transferir diseños a productos como tazas, ropa, y vasos. Este método implica el uso de tintas especiales que se convierten en gas sin pasar por la fase líquida cuando se calientan</p>
+                    <a class="botonGetStarted" href="#">Leer más</a>
                 </article>
             </div>
 
@@ -176,7 +149,7 @@
 
         <!-- Sección Testimonios -->
         <section class="boxSlider" id="linkTestimonial">
-            <h3>Testimonials</h3>
+            <h3>Testimonios</h3>
 
             <div id="carouselExampleIndicators" class="carousel slide centerSlider" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -186,8 +159,11 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                 </ol>
 
-                <div class="carousel-inner" id="testimonio"></div>
-
+                <div class="carousel-inner" id="testimonio">
+                    
+                </div>
+            
+            </div>
 
             </div>
 
@@ -196,18 +172,18 @@
 
         <!-- Sección Contacto -->
         <section class="boxContacto" id="linkContacto">
-            <h3>Get In Touch</h3>
+            <h3>Contáctanos</h3>
 
             <div class="container contacto">
                 <form id="miForm">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputName"><b>First Name</b></label>
-                            <input type="text" class="form-control" id="inputName" placeholder="First Name..." required>
+                            <label for="inputName"><b>Nombre</b></label>
+                            <input type="text" class="form-control" id="inputName" placeholder="Nombres..." required>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputLastName"><b>Last Name</b></label>
-                            <input type="text" class="form-control" id="inputLastName" placeholder="Last Name..." required>
+                            <label for="inputLastName"><b>Apellido</b></label>
+                            <input type="text" class="form-control" id="inputLastName" placeholder="Apellidos..." required>
                         </div>
                     </div>
 
@@ -217,17 +193,17 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="inputSubject"><b>Subject</b></label>
-                        <input type="text" class="form-control" id="inputSubject" placeholder="Subject..." required>
+                        <label for="inputSubject"><b>Asunto</b></label>
+                        <input type="text" class="form-control" id="inputSubject" placeholder="Asunto..." required>
                     </div>
 
                     <div class="form-group">
-                        <label for="message"><b>Message</b></label>
-                        <textarea class="form-control" rows="5" id="message" placeholder="Message..." required></textarea>
+                        <label for="message"><b>Mensaje</b></label>
+                        <textarea class="form-control" rows="5" id="message" placeholder="Escriba su Mensaje..." required></textarea>
                     </div>
 
 
-                    <button type="submit" class="botonEnviarMensaje">Send Message</button>
+                    <button type="submit" class="botonEnviarMensaje">Enviar</button>
                 </form>
             </div>
         </section>
@@ -239,7 +215,7 @@
     <!-- Contenedor Footer -->
     <footer class="footer">
         <div class="boxTextFooter">
-            <p>Hecho POR <span class="icon-heart"></span> por Equipo CCEF</a></p>
+            <p>Hecho por Equipo CCEF</p>
         </div>
     </footer>
     <!-- Fin Contenedor Footer -->
@@ -250,13 +226,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="{% static 'js/dataApi.js' %}"></script>
     <script src="{% static 'js/app.js' %}"></script>
+    
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/56994916406" class="whatsapp-button" target="_blank">
+    <img src="{% static 'images/whatsapp.png' %}" alt="WhatsApp" />
+    </a>
+
+    <!-- Botón de Instagram -->
+    <a href="https://www.instagram.com/teamsublima/" class="instagram-button" target="_blank">
+    <img src="{% static 'images/instagram.png' %}" alt="Instagram" />
+    </a>
 
 </body>
 
 </html>
 
-<!--#BADF88
-#FCC89C
-#F297BF
-#C99FEA 
 
