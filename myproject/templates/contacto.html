@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contacto - Team Sublima{% endblock %}
+
+{% block header_content %}
+<div class="boxHeader" style="background-color: pink;">
+    <div class="textosHeader animate__animated animate__fadeInLeft">
+        <h1><b>Contáctanos</b></h1>
+        <p>¿Tienes alguna pregunta o comentario? ¡Nos encantaría saber de ti!</p>
+    </div>
+    <div class="imgHeader animate__animated animate__fadeInRight">
+        <img src="{% static 'images/teamSublima.jpg' %}" alt="Team Sublima">
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="contacto-section">
+    <div class="container">
+        <form method="post" action="{% url 'contacto' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="asunto">Asunto:</label>
+                <input type="text" id="asunto" name="asunto" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .boxHeader {
+        padding-bottom: 20px; /* Añade espacio debajo del header */
+    }
+    .contacto-section {
+        padding: 40px 0; /* Añade espacio arriba y abajo de la sección de contacto */
+    }
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa; /* Fondo claro para el formulario */
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra suave alrededor del formulario */
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    textarea {
+        height: 150px;
+    }
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock %}

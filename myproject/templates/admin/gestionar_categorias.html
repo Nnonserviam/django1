@@ -1,0 +1,28 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h2>Gestionar Categorías</h2>
+
+<h3>Agregar nueva categoría</h3>
+<form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="accion" value="agregar">
+    <input type="text" name="nombre" required>
+    <input type="submit" value="Agregar">
+</form>
+
+<h3>Categorías existentes</h3>
+<ul>
+    {% for categoria in categorias %}
+    <li>
+        {{ categoria.nombre }}
+        <form method="post" style="display: inline;">
+            {% csrf_token %}
+            <input type="hidden" name="accion" value="eliminar">
+            <input type="hidden" name="categoria_id" value="{{ categoria.id }}">
+            <input type="submit" value="Eliminar">
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

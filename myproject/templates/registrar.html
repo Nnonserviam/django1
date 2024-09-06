@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Registrarse - Team Sublima{% endblock %}
+
+{% block header_content %}
+<div class="boxHeader" style="background-color: pink;">
+    <div class="textosHeader animate__animated animate__fadeInLeft">
+        <h1><b>Registrarse</b></h1>
+        <p>Crea una cuenta para acceder a todos nuestros servicios.</p>
+    </div>
+    <div class="imgHeader animate__animated animate__fadeInRight">
+        <img src="{% static 'images/teamSublima.jpg' %}" alt="Team Sublima">
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="registrar-section">
+    <div class="container">
+        <form method="post" action="{% url 'registrar' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Nombre de usuario:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password1">Contraseña:</label>
+                <input type="password" id="password1" name="password1" required>
+            </div>
+            <div class="form-group">
+                <label for="password2">Confirmar contraseña:</label>
+                <input type="password" id="password2" name="password2" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Registrarse</button>
+        </form>
+        <p class="mt-3">¿Ya tienes una cuenta? <a href="{% url 'login' %}">Ingresa aquí</a></p>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .registrar-section {
+        padding: 40px 0;
+    }
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    button {
+        width: 100%;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock %}

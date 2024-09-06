@@ -21,16 +21,16 @@
     <nav>
         
         <a href="/" >Home</a>
-        <a href="{% url 'posts:list' %}" >Productos</a>
+        <a href="{% url '' %}" >Productos</a>
         <a href="/about">About</a>
         {% if user.is_authenticated %}
-        <form class="salir" action="{% url 'usuarios:salir' %}" method="post">
+        <form class="salir" action="" method="post">
         {% csrf_token %}
         <button class="boton-salir">Salir</button>
         </form>
         {% else %}
-        <a href="{% url 'usuarios:registrar' %}">Registrar</a>
-        <a href="{% url 'usuarios:ingresar' %}">Ingresar</a>
+        <a href="">Registrar</a>
+        <a href="">Ingresar</a>
         {% endif %}
     </nav>
  {% block content %}

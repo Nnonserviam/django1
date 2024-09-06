@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Testimonios - Team Sublima{% endblock %}
+
+{% block header_content %}
+<div class="boxHeader" style="background-color: #f0f0f0;">
+    <div class="textosHeader animate__animated animate__fadeInLeft">
+        <h1><b>Testimonios</b></h1>
+        <p>Lo que nuestros clientes dicen sobre nosotros</p>
+    </div>
+    <div class="imgHeader animate__animated animate__fadeInRight">
+        <img src="{% static 'images/teamSublima.jpg' %}" alt="Team Sublima">
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="boxSlider" id="linkTestimonial">
+    <h3>Lo que dicen nuestros clientes</h3>
+
+    <div id="carouselExampleIndicators" class="carousel slide centerSlider" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner" id="testimonio">
+            <div class="carousel-item active">
+                <div class="testimonial">
+                    <p>"¡Excelente servicio! Los productos personalizados quedaron increíbles."</p>
+                    <h4>- María G.</h4>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="testimonial">
+                    <p>"La calidad de la impresión es excepcional. Muy satisfecho con mi compra."</p>
+                    <h4>- Juan P.</h4>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="testimonial">
+                    <p>"Atención al cliente de primera. Resolvieron todas mis dudas rápidamente."</p>
+                    <h4>- Ana L.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
