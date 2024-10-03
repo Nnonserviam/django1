@@ -13,5 +13,3 @@ urlpatterns = [
     path('testimonios/', views.testimonios, name='testimonios'),
     path('contacto/', views.contacto, name='contacto'),
 ]
-if settings.DEBUG:  # Solo en modo de desarrollo
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
