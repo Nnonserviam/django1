@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate,login as auth_login
 from django.contrib import messages
 from django.contrib.auth import logout
+from .forms import CustomUserCreationForm
 
 def login(request):
     if request.method == 'POST':
@@ -19,14 +20,18 @@ def login(request):
 
 def registrar(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
+            user = authenticate(email=form.cleaned_data['email'], password=form.cleaned_data['password1'])
             auth_login(request, user)
             return redirect('home')
+        else:
+            messages.error(request, "Error en el registro.")
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
     return render(request, 'registrar.html', {'form': form})
+
+def logout_view(request):
+    logout(request)
+    return redirect('home')

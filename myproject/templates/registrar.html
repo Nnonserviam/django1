@@ -20,21 +20,41 @@
     <div class="container">
         <form method="post" action="{% url 'registrar' %}">
             {% csrf_token %}
-            <div class="form-group">
-                <label for="username">Nombre de usuario:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
+            {{ form.non_field_errors }}  <!-- Muestra errores generales -->
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
+                {{ form.email }}  <!-- Campo de email -->
+                {{ form.email.errors }}  <!-- Muestra errores específicos del campo -->
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                {{ form.telefono }}  <!-- Campo de teléfono -->
+                {{ form.telefono.errors }}  <!-- Muestra errores específicos del campo -->
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                {{ form.nombre }}  <!-- Campo de nombre -->
+                {{ form.nombre.errors }}  <!-- Muestra errores específicos del campo -->
+            </div>
+            <div class="form-group">
+                <label for="apellido_paterno">Apellido Paterno:</label>
+                {{ form.apellido_paterno }}  <!-- Campo de apellido paterno -->
+                {{ form.apellido_paterno.errors }}  <!-- Muestra errores específicos del campo -->
+            </div>
+            <div class="form-group">
+                <label for="apellido_materno">Apellido Materno:</label>
+                {{ form.apellido_materno }}  <!-- Campo de apellido materno -->
+                {{ form.apellido_materno.errors }}  <!-- Muestra errores específicos del campo -->
             </div>
             <div class="form-group">
                 <label for="password1">Contraseña:</label>
-                <input type="password" id="password1" name="password1" required>
+                {{ form.password1 }}  <!-- Campo de contraseña -->
+                {{ form.password1.errors }}  <!-- Muestra errores específicos del campo -->
             </div>
             <div class="form-group">
-                <label for="password2">Confirmar contraseña:</label>
-                <input type="password" id="password2" name="password2" required>
+                <label for="password2">Confirmar Contraseña:</label>
+                {{ form.password2 }}  <!-- Campo de confirmación de contraseña -->
+                {{ form.password2.errors }}  <!-- Muestra errores específicos del campo -->
             </div>
             <button type="submit" class="btn btn-primary">Registrarse</button>
         </form>
