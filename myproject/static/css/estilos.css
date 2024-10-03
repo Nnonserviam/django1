@@ -943,5 +943,9 @@ a.botonGetStarted:hover {
 .whatsapp-button:hover img {
     transform: scale(1.1);
 }
-
-
+.detalle-producto {
+    padding: 50px;
+    background-color: #FFFFFF;
+    height: auto;
+    text-align: center;
+}

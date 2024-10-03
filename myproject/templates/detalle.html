@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Detalles del Producto - {{ producto.nombre }}{% endblock %}
+
+{% block header_content %}
+<div class="boxHeader" style="background-color: lightblue;">
+    <div class="textosHeader animate__animated animate__fadeInLeft">
+        <h1><b>{{ producto.nombre }}</b></h1>
+        <p>Detalles del producto seleccionado.</p>
+    </div>
+    <div class="imgHeader animate__animated animate__fadeInRight">
+        <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<section class="detalle-producto">
+    <h2>Descripción</h2>
+    <p>{{ producto.descripcion|linebreaks }}</p>
+    <h3>Precio: ${{ producto.precio }}</h3>
+    <h4>Stock disponible: {{ producto.stock }}</h4>
+    <a href="{% url 'productos' %}" class="btn btn-primary">Volver al Catálogo</a>
+</section>
+{% endblock %}

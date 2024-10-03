@@ -3,7 +3,7 @@ from django.template import loader
 from django.shortcuts import redirect
 from .models import Producto
 
-# ... otras importaciones y vistas ...
+
 
 def productos(request):
     productos = Producto.objects.all()
@@ -12,4 +12,10 @@ def productos(request):
         'productos': productos,
     }
     return HttpResponse(template.render(context, request))
-# ... resto del código ...
+def detalle(request,id):
+    producto = Producto.objects.get(id=id)
+    template = loader.get_template('detalle.html')
+    context = {
+        'producto': producto,
+    }
+    return HttpResponse(template.render(context, request))
