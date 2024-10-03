@@ -1,10 +1,15 @@
-from django.shortcuts import render
-from productos.models import Producto
+from django.http import HttpResponse
+from django.template import loader
+from django.shortcuts import redirect
+from .models import Producto
 
 # ... otras importaciones y vistas ...
 
 def productos(request):
-    lista_productos = Producto.objects.all()
-    return render(request, 'productos.html', {'productos': lista_productos})
-
+    productos = Producto.objects.all()
+    template = loader.get_template('productos.html')
+    context = {
+        'productos': productos,
+    }
+    return HttpResponse(template.render(context, request))
 # ... resto del código ...

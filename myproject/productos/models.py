@@ -17,7 +17,7 @@ class Producto(models.Model):
     stock = models.PositiveIntegerField()
     slug = models.SlugField(unique=True, blank=True)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
-    imagen = models.ImageField(upload_to='productos/', default='default.png', blank=True)
+    imagen = models.ImageField(upload_to='images/', default='/media/images/luffy.png', blank=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True, blank=True)
 
     def save(self, *args, **kwargs):

@@ -25,6 +25,7 @@
             object-fit: cover; 
         }
     </style>
+    {%bootstrap_css%}
     {% block extra_css %}{% endblock %}
 </head>
 
@@ -72,10 +73,11 @@
     <!-- Fin Contenedor Header -->
 
     <!-- Contenedor Main -->
-    <main>
-        <a id="subir" class="icon-arrow-up scroll" href="#linkHome"></a>
-        {% block content %}{% endblock %}
-    </main>
+   
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    
     <!-- Fin Contenedor Main -->
 
     <!-- Contenedor Footer -->
@@ -94,7 +96,7 @@
     
     <!-- Botón de WhatsApp -->
     <a href="https://wa.me/56994916406" class="whatsapp-button" target="_blank">
-    <img src="{% static 'images/whatsapp.png' %}" alt="WhatsApp" />
+    <img src="{% static '/images/whatsapp.png' %}" alt="WhatsApp" />
     </a>
 
     <!-- Botón de Instagram -->
