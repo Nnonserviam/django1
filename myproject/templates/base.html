@@ -59,6 +59,9 @@
                     <li class="nav-item">
                         <a class="nav-link {% if request.resolver_match.url_name == 'logout' %}current{% endif %}" href="{% url 'logout' %}">Cerrar sesión</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'perfil' %}current{% endif %}" href="{% url 'perfil' %}">Perfil</a>
+                    </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.resolver_match.url_name == 'login' %}current{% endif %}" href="{% url 'login' %}">Ingresar</a>

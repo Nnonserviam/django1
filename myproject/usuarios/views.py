@@ -35,3 +35,7 @@ def registrar(request):
 def logout_view(request):
     logout(request)
     return redirect('home')
+def perfil(request):
+    if request.user.is_authenticated:
+        return render(request, 'perfil.html',{'user': request.user})
+    return redirect('login')

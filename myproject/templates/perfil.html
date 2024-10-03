@@ -1,7 +1,19 @@
 {% extends 'base.html' %}
-
+{% load static %}
+{% block header_content%}
+<div class="boxHeader">
+    <div class="textosHeader animate__animated animate__fadeInLeft">
+        <h1><b>Perfil de usuario</b></h1>
+        <p>¿Tienes alguna pregunta o comentario? ¡Nos encantaría saber de ti!</p>
+    </div>
+    <div class="imgHeader animate__animated animate__fadeInRight">
+        <img src="{% static 'images/teamSublima.jpg' %}" alt="">
+    </div>
+</div>
+{% endblock %}
 {% block content %}
-<h2>Mi Perfil</h2>
-<p>Bienvenido, {{ user.username }}!</p>
-<!-- Aquí puedes añadir más información del perfil -->
+    <h1>Perfil de {{ user.get_full_name }}</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>Teléfono: {{ user.telefono }}</p>
+    <p>Fecha de registro: {{ user.date_joined }}</p>
 {% endblock %}
