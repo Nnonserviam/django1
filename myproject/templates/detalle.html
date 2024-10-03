@@ -7,7 +7,7 @@
 <div class="boxHeader" style="background-color: lightblue;">
     <div class="textosHeader animate__animated animate__fadeInLeft">
         <h1><b>{{ producto.nombre }}</b></h1>
-        <p>Detalles del producto seleccionado.</p>
+        <p>{{ producto.descripcion|linebreaks }}</p>
     </div>
     <div class="imgHeader animate__animated animate__fadeInRight">
         <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
@@ -17,8 +17,7 @@
 
 {% block content %}
 <section class="detalle-producto">
-    <h2>Descripción</h2>
-    <p>{{ producto.descripcion|linebreaks }}</p>
+    <h2>{{ producto.nombre }}</h2>
     <h3>Precio: ${{ producto.precio }}</h3>
     <h4>Stock disponible: {{ producto.stock }}</h4>
     <a href="{% url 'productos' %}" class="btn btn-primary">Volver al Catálogo</a>
