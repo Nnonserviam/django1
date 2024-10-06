@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Mensaje Enviado{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h2 class="card-title">¡Mensaje Enviado!</h2>
+                    <p class="card-text">Tu mensaje ha sido enviado con éxito. Nos pondremos en contacto contigo pronto.</p>
+                    <a href="{% url 'home' %}" class="btn btn-primary">Volver al inicio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
