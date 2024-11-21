@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'productos',
     'pedidos',
     'contacto',
+    'carrito',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'pedidos.procesadores_context.carrito',
             ],
         },
     },

@@ -6,7 +6,7 @@ from .models import Producto
 
 
 def productos(request):
-    productos = Producto.objects.all()
+    productos = Producto.objects.all().filter(disponible=True)
     template = loader.get_template('productos.html')
     context = {
         'productos': productos,

@@ -3,7 +3,8 @@
 
 {% block title %}Detalles del Producto - {{ producto.nombre }}{% endblock %}
 
-{% block header_content %}
+
+{% block content %}
 <div class="boxHeader" style="background-color: lightblue;">
     <div class="textosHeader animate__animated animate__fadeInLeft">
         <h1><b>{{ producto.nombre }}</b></h1>
@@ -13,13 +14,15 @@
         <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
     </div>
 </div>
-{% endblock %}
-
-{% block content %}
 <section class="detalle-producto">
     <h2>{{ producto.nombre }}</h2>
     <h3>Precio: ${{ producto.precio }}</h3>
-    <h4>Stock disponible: {{ producto.stock }}</h4>
+
+    {% if producto.stock <= 0 %}
+    <h5>No hay Stock de este producto</h5>
+    {% else %}
+    <a href="{% url 'añadir_carrito' producto.id%}" class="btn btn-primary">Añadir al Carrito</a>
+    {% endif%}
     <a href="{% url 'productos' %}" class="btn btn-primary">Volver al Catálogo</a>
 </section>
 {% endblock %}

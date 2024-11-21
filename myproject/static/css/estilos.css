@@ -949,3 +949,8 @@ a.botonGetStarted:hover {
     height: auto;
     text-align: center;
 }
+
+#imagencarrito{
+    height: 250px;
+    width: 250px;
+}

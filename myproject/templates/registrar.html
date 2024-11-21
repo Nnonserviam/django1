@@ -3,7 +3,8 @@
 
 {% block title %}Registrarse - Team Sublima{% endblock %}
 
-{% block header_content %}
+
+{% block content %}
 <div class="boxHeader" style="background-color: pink;">
     <div class="textosHeader animate__animated animate__fadeInLeft">
         <h1><b>Registrarse</b></h1>
@@ -13,9 +14,6 @@
         <img src="{% static 'images/teamSublima.jpg' %}" alt="Team Sublima">
     </div>
 </div>
-{% endblock %}
-
-{% block content %}
 <section class="registrar-section">
     <div class="container">
         <form method="post" action="{% url 'registrar' %}">

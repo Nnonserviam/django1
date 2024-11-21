@@ -3,10 +3,12 @@
 
 {% block title %}Inicio - Team Sublima{% endblock %}
 
-{% block header_content %}
+
+{% block content %}
 <div class="boxHeader">
     <div class="textosHeader animate__animated animate__fadeInLeft">
-        <h1><b>🎨✨ ¡Personaliza tus productos con Nosotros ✨🎨</b></h1>
+        <h1><b
+            style="color: black;">🎨✨ ¡Personaliza tus productos con Nosotros ✨🎨</b></h1>
         <p>¿Quieres darle un toque único a tus artículos favoritos? ¡Nosotros te ayudamos! 
            Desde camisetas hasta tazas y más, hacemos que tus ideas cobren vida.</p>
         <a class="botonGetStarted" href="{% url 'productos' %}">Ver nuestros productos</a>
@@ -15,12 +17,6 @@
         <img src="{% static 'images/teamSublima.jpg' %}" alt="">
     </div>
 </div>
-{% endblock %}
-
-{% block content %}
-<!-- Otras secciones de la página de inicio -->
-
-<!-- Sección que enlaza a productos -->
 <section class="boxFeatures" id="linkFeatures">
     <h3>Descubre nuestros productos</h3>
     <p>Tenemos una amplia variedad de productos personalizables para ti.</p>

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Carrito de Compras{% endblock %}
+
+{% block content %}
+{% if items_carrito%}
+{%for item_carrito in items_carrito %}
+<h1>{{item_carrito.producto.nombre}}</h1>
+<img src="{{item_carrito.producto.imagen.url}}"id="imagencarrito">
+<div class="row">
+    <div class="col">
+        <a href="{% url 'remover_carrito' item_carrito.producto.id%}">-</a>
+        <h4>{{item_carrito.cantidad}}</h2>
+            <a href="{% url 'añadir_carrito' item_carrito.producto.id %}">+</a>
+        <h4>{{item_carrito.sub_total}}</h3>
+        <h4>{{item_carrito.producto.precio}}</h3>
+</div>
+</div> 
+{% endfor%}
+
+<h1>{{total}}</h1>
+{%else%}
+<h1>no hay nada en tu carrito</h1>
+<div class="text-center">
+    <a href="{% url 'productos'%}">Volver al catalogo</a>
+</div>
+{% endif%}
+{% endblock %}

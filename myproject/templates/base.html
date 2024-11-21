@@ -27,6 +27,7 @@
     </style>
     {%bootstrap_css%}
     {% block extra_css %}{% endblock %}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -71,14 +72,24 @@
                     </li>
                     {% endif%}
                 </ul>
+                <form class="d-flex">
+                    <a href="{% url 'carrito'%}">
+                    <button class="btn btn-outline-dark" type="submit">
+                        <i class="bi-cart-fill me-1"></i>
+                        Carrito
+                        <span class="badge bg-dark text-white ms-1 rounded-pill" id="contador_carrito"></span>
+                    </a>
+                    </button>
+                </form>
             </div>
         </nav>
 
-        {% block header_content %}{% endblock %}
+        
     </header>
     <!-- Fin Contenedor Header -->
 
     <!-- Contenedor Main -->
+     
    
         <main>
             {% block content %}{% endblock %}

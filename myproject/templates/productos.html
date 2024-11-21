@@ -3,7 +3,7 @@
 
 {% block title %}Productos - Team Sublima{% endblock %}
 
-{% block header_content %}
+{% block content %}
 <div class="boxHeader" style="background-color: pink;">
     <div class="textosHeader animate__animated animate__fadeInLeft">
         <h1><b>Nuestros Productos</b></h1>
@@ -13,26 +13,26 @@
         <img src="{% static 'images/teamSublima.jpg' %}" alt="Team Sublima">
     </div>
 </div>
-{% endblock %}
 
-{% block content %}
 <section class="boxFeatures" id="linkFeatures">
     <h3>Catálogo de Productos</h3>
-
-    <div class="features">
-        {% for producto in productos %}
-        <div class="cardFeatures">
-            
-            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
-            <h4><a href="/productos/{{producto.id}}">{{ producto.nombre }}</a></h4>
-            <p>
-                {{ producto.descripcion|linebreaks }}
-                Precio: ${{ producto.precio }}
-            </p>
-        </div>
-        {% empty %}
-        <p>No hay productos disponibles en este momento.</p>
-        {% endfor %}
+    <div class="row">
+        <div class="col">
+            <div class="features" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                {% for producto in productos %}
+                <div class="cardFeatures" style="flex: 1 1 200px; border: 1px solid #ccc; padding: 10px; border-radius: 5px;">
+                    <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" style="max-width: 100%; height: auto;">
+                    <h4><a href="/productos/{{producto.id}}">{{ producto.nombre }}</a></h4>
+                    <p>
+                        {{ producto.descripcion|linebreaks }}
+                        Precio: ${{ producto.precio }}
+                    </p>
+                </div>
+                {% empty %}
+                <p>No hay productos disponibles en este momento.</p>
+                {% endfor %}
     </div>
+</div>
+</div>
 </section>
 {% endblock %}
